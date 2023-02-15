@@ -1,0 +1,84 @@
+ 
+  .todo {
+    width: 60%;
+    height: 30px;
+    font-size: 20px;
+    padding: 20px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: auto;
+  }
+
+  .btn-input{
+    margin-left: 10px;
+    width: 90%;
+    text-align: left;
+  }
+
+  .todo-buttons{
+    display: flex;
+  }
+  
+  .submit-form{
+    display: flex;
+  }
+  
+  .submit-form input{
+    width: 100%;
+  }
+  
+  .todo:hover {
+    background: rgba(214, 214, 214, 0.342);
+    border-radius: 6px;
+  }
+  
+  .todo input {
+    zoom: 1.6;
+    margin-left: 1rem;
+  }
+  
+  .input-form.completed-true{
+    text-decoration: line-through;
+  }
+
+  .btn:focus {
+    box-shadow: #3c4fe0 0 0 0 1.5px inset, rgba(45, 35, 66, .4) 0 2px 4px, rgba(45, 35, 66, .3) 0 7px 13px -3px, #3c4fe0 0 -3px 0 inset;
+  }
+  
+  .btn:hover {
+    box-shadow: rgba(45, 35, 66, .4) 0 4px 8px, rgba(45, 35, 66, .3) 0 7px 13px -3px, #3c4fe0 0 -3px 0 inset;
+    transform: translateY(-2px);
+  }
+  
+  btn:active {
+    box-shadow: #3c4fe0 0 3px 7px inset;
+    transform: translateY(2px);
+  }
+  
+  
+  .btn {
+    align-items: center;
+    background-image: radial-gradient(100% 100% at 100% 0, #5adaff 0, #5468ff 100%);
+    border: 0;
+    border-radius: 6px;
+    box-shadow: rgba(45, 35, 66, .4) 0 2px 4px,rgba(45, 35, 66, .3) 0 7px 13px -3px,rgba(58, 65, 111, .5) 0 -3px 0 inset;
+    color: #fff;
+    cursor: pointer;
+    height: 2rem;
+    padding-left: 16px;
+    padding-right: 16px;
+    margin-right: 1rem;
+    font-size: 18px;
+  }
+  
+  .btn, .save {
+    margin-right: 0rem;
+    margin-left: 1rem;
+  }
+  
+  .submit-form{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
