@@ -1,16 +1,44 @@
-# Full Stack MERN To-Do Application
+# Full-Stack MERN To-Do Application
 
-## How to Get Started
+Try it here: https://to-do-app-6714.onrender.com/register
 
-1. Clone this repository
-2. Install dependencies by running `npm install` in both the client and server folders
-3. Start the client by running `npm start` in the client folder
-4. Start the server by running `npm run dev` in the server folder
+## Desktop view
 
-## Client
+![Image showing registration flow](./images/flow1.png)
 
-The client side of the application is built with React and uses local state w/ props for state management.
+![Image showing login flow](./images/flow2.png)
 
-## Server
+![Image showing to-do app](./images/flow3.png)
 
-The server side of the application is built with Node.js and uses Express for routing and MongoDB as the database.
+This is a to-do application, with a simple / clean user interface. Once registered, and logged-in, users are able to access to to-do app (incl. historic to-do's if this isn't their first time), where they can add, edit, remove, and complete to-do items. The app functionality has been restricted to gmail domains (to practise middleware, nothing against non-gmail users) - therefore, use gmail when registering to get the complete app experience.
+
+## Quick start
+
+Clone the repo.
+
+~~~
+// Install dependencies (in client and server)
+npm install
+
+// Run server
+npm run dev 
+
+//Run client
+npm start
+~~~
+
+## Technology
+
+This is a full-stack application, built using:
+
+*React
+*Javascript
+*JSX
+*CSS
+*HTML
+*MongoDB
+*Mongoose
+*Node
+*Express
+*Jsonwebtoken
+*Bcrypt
