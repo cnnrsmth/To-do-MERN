@@ -10,7 +10,7 @@ Try it here: https://to-do-app-6714.onrender.com/register
 
 ![Image showing to-do app](./images/flow3.png)
 
-This is a to-do application, with a simple / clean user interface. Once registered, and logged-in, users are able to access to to-do app (incl. historic to-do's if this isn't their first time), where they can add, edit, remove, and complete to-do items. The app functionality has been restricted to gmail domains (to practise middleware, nothing against non-gmail users) - therefore, use gmail when registering to get the complete app experience.
+This is a to-do application, with a simple / clean user interface. Once registered, and logged-in, users are able to access the to-do app (incl. historic to-do's if this isn't their first time), where they can add, edit, remove, and complete to-do items. The app functionality has been restricted to gmail domains (to practise middleware, nothing against non-gmail users) - therefore, use gmail when registering to get the complete app experience.
 
 ## Quick start
 
