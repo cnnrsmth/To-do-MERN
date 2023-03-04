@@ -31,14 +31,14 @@ npm start
 
 This is a full-stack application, built using:
 
-*React
-*Javascript
-*JSX
-*CSS
-*HTML
-*MongoDB
-*Mongoose
-*Node
-*Express
-*Jsonwebtoken
-*Bcrypt
+* React
+* Javascript
+* JSX
+* CSS
+* HTML
+* MongoDB
+* Mongoose
+* Node
+* Express
+* Jsonwebtoken
+* Bcrypt
