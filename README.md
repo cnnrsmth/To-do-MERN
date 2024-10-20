@@ -6,7 +6,7 @@ Try it here: https://to-do-app-6714.onrender.com/register (to be updated)
 
 ![Image showing registration flow](./images/updflow1.png)
 
-![Image showing gmail validation](./images/gmailValidation.png)
+![Image showing gmail validation](./images/gmailvalidation.png)
 
 ![Image showing password match validation](./images/passwordValidation1.png)
 
