@@ -18,6 +18,12 @@ const Register = () => {
     // Reset error message before each submission
     setErrorMessage("");
 
+    // Check if passwords match
+    if (newUser.password !== newUser.password_confirmation) {
+      setErrorMessage("Passwords do not match.");
+      return; // Exit early if passwords do not match
+    }
+
     try {
       const response = await fetch("http://localhost:8080/todos/register", {
         method: "POST",
