@@ -139,3 +139,13 @@
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Reduced shadow on click */
   transform: translateY(2px); /* Button moves down slightly on click */
 }
+
+.error-message {
+  color: #a20000; /* Deep red color */
+  font-size: 0.875rem; /* Smaller text size */
+  font-style: italic; /* Italicize text */
+  margin: 5px 0 0; /* Add top margin for spacing above, no bottom margin */
+  padding: 0; /* Remove any padding */
+  line-height: 1.2; /* Keep line height for better readability */
+  text-align: center; /* Center align the error message */
+}

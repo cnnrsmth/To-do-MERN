@@ -1,30 +1,40 @@
-/*configures the backend express server */
+/* configures the backend express server */
 
-const express = require('express')
-const app = express()
-const mongoose = require('mongoose')
-const dotenv = require('dotenv')
-const authRoutes = require('./routes/authRoutes')
-const taskRoutes = require('./routes/taskRoutes')
-const cors = require('cors')
+const express = require("express");
+const app = express();
+const mongoose = require("mongoose");
+const dotenv = require("dotenv");
+const authRoutes = require("./routes/authRoutes"); // Assuming this contains your registration route
+const taskRoutes = require("./routes/taskRoutes"); // Assuming this handles task-related routes
+const cors = require("cors");
 
-dotenv.config()
+dotenv.config();
 
-//set up database connection
-mongoose.connect(process.env.DB_ACCESS, () => console.log("Database connected"))
+// Set up database connection
+mongoose
+  .connect(process.env.DB_ACCESS, {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+  })
+  .then(() => console.log("Database connected"))
+  .catch((err) => console.error("Database connection error:", err));
 
-//set up port to listen on
-const port = process.env.PORT || 8080
+// Set up port to listen on
+const port = process.env.PORT || 8080;
 
-app.use(express.json())
+app.use(express.json()); // Middleware to parse JSON bodies
 
-//enable CORS to prevent CORS-related errors
-app.use(cors({
-    origin: 'http://localhost:3000',
-    credentials: true
-}))
+// Enable CORS to prevent CORS-related errors
+app.use(
+  cors({
+    origin: "http://localhost:3000", // Adjust this based on your frontend's URL
+    credentials: true, // Allow credentials to be sent
+  })
+);
 
-//handle routes
-app.use('/todos', authRoutes)
-app.use('/todos', taskRoutes)
-app.listen(port, () => console.log(`Listening on port ${port}...`))
+// Handle routes
+app.use("/todos", authRoutes); // Auth routes (e.g., register, login)
+app.use("/todos", taskRoutes); // Task-related routes
+
+// Start the server
+app.listen(port, () => console.log(`Listening on port ${port}...`));

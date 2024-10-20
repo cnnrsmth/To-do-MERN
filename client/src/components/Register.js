@@ -1,7 +1,3 @@
-/*Login component is responsible for registering the user. It makes a call to an api to store user details
-in a database. Confirmation password is not stored in db, but is checked for validity. Password is hashed
-before being stored for security reasons (this happens in the backend).*/
-
 import React, { useState } from "react";
 import { Link } from "react-router-dom"; // Import Link from react-router-dom
 import "./register.css";
@@ -14,24 +10,33 @@ const Register = () => {
     password: "",
     password_confirmation: "",
   });
+  const [errorMessage, setErrorMessage] = useState(""); // State for error messages
 
   const handleAddUser = async (e) => {
     e.preventDefault();
-    if (newUser.password === newUser.password_confirmation) {
-      try {
-        await fetch("http://localhost:8080/todos/register", {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify(newUser),
-        });
-        window.location = "/login";
-      } catch (error) {
-        console.error(error);
+
+    // Reset error message before each submission
+    setErrorMessage("");
+
+    try {
+      const response = await fetch("http://localhost:8080/todos/register", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(newUser),
+      });
+
+      if (!response.ok) {
+        const errorData = await response.json();
+        setErrorMessage(errorData.error); // Set the error message from the response
+        return; // Exit early if there's an error
       }
-    } else {
-      alert("password confirmation incorrect");
+
+      window.location = "/login"; // Redirect on successful registration
+    } catch (error) {
+      console.error(error);
+      setErrorMessage("An error occurred while registering. Please try again."); // General error message
     }
   };
 
@@ -99,6 +104,8 @@ const Register = () => {
           {/* Use Link for navigation */}
         </p>
       </div>
+      {errorMessage && <p className="error-message">{errorMessage}</p>}{" "}
+      {/* Display error message snugly under input */}
     </div>
   );
 };
