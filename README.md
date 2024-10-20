@@ -4,9 +4,9 @@ Try it here: https://to-do-app-6714.onrender.com/register (to be updated)
 
 ## Desktop view
 
-![Image showing registration flow](./images/flow1.png)
+![Image showing registration flow](./images/updflow1.png)
 
-![Image showing login flow](./images/flow2.png)
+![Image showing login flow](./images/updflow2.png)
 
 ![Image showing to-do app](./images/flow3.png) (to be updated)
 
