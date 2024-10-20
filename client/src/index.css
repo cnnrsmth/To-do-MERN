@@ -1,19 +1,19 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;700;800;900&display=swap");
+
 body {
   height: 100%;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+  font-family: "Inter", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background: linear-gradient(178.1deg, rgb(60, 55, 106) 8.5%, rgb(23, 20, 69) 82.4%);
+  background: rgb(255, 255, 255);
   background-repeat: no-repeat;
   background-attachment: fixed;
-  color: #ffff;
+  color: rgb(25, 28, 31);
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
 
@@ -25,7 +25,7 @@ code {
   height: 100vh; /* Height of the viewport */
 }
 
-.App-form{
+.App-form {
   margin-top: 10%;
   text-align: center;
   margin-bottom: 10px;
@@ -38,27 +38,28 @@ code {
   margin-left: 2rem;
   background-color: transparent;
   border: none;
-  border-bottom: 1px solid #DDE3EC;
+  border-bottom: 1px solid #dde3ec;
   font-size: 16px;
   outline: none;
   resize: none;
-  color: #ffff
+  color: rgb(25, 28, 31);
 }
 
 .App-form input::placeholder {
-  color: #ffffff85;
+  color: rgb(25, 28, 31);
 }
 
 .App-form input:focus {
-  border-color: #6A64F1;
+  border-color: #6a64f1;
 }
 
-.App-form button{
+.App-form button {
   margin-left: 1rem;
 }
 
 .App-form button:hover {
-  box-shadow: rgba(45, 35, 66, .4) 0 4px 8px, rgba(45, 35, 66, .3) 0 7px 13px -3px, #3c4fe0 0 -3px 0 inset;
+  box-shadow: rgba(45, 35, 66, 0.4) 0 4px 8px,
+    rgba(45, 35, 66, 0.3) 0 7px 13px -3px, #3c4fe0 0 -3px 0 inset;
   transform: translateY(-2px);
 }
 
@@ -69,11 +70,16 @@ code {
 
 .App-form button {
   align-items: center;
-  background-image: radial-gradient(100% 100% at 100% 0, #5adaff 0, #5468ff 100%);
+  background-image: radial-gradient(
+    100% 100% at 100% 0,
+    #5adaff 0,
+    #5468ff 100%
+  );
   border: 0;
   border-radius: 6px;
-  box-shadow: rgba(45, 35, 66, .4) 0 2px 4px,rgba(45, 35, 66, .3) 0 7px 13px -3px,rgba(58, 65, 111, .5) 0 -3px 0 inset;
-  color: #fff;
+  box-shadow: rgba(45, 35, 66, 0.4) 0 2px 4px,
+    rgba(45, 35, 66, 0.3) 0 7px 13px -3px, rgba(58, 65, 111, 0.5) 0 -3px 0 inset;
+  color: rgb(25, 28, 31);
   cursor: pointer;
   height: 2rem;
   padding-left: 16px;
