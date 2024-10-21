@@ -1,0 +1,83 @@
+.todoform-wrapper {
+  display: flex;
+  justify-content: center; /* Center the form in the parent container */
+  margin: 20px 0; /* Add some vertical spacing */
+}
+
+.todoform-input-flex {
+  display: flex; /* Align input and button in a row */
+  align-items: center; /* Center items vertically */
+  gap: 10px; /* Space between input and button */
+  width: 100%; /* Ensure the flex container takes the full width */
+  max-width: 600px; /* Set a max width for the input area */
+}
+
+.todoform-input {
+  flex: 1; /* Allow input to grow and fill space */
+  min-width: 200px; /* Minimum width for smaller screens */
+  padding: 10px; /* Padding for better appearance */
+  border: 1px solid #cfd5de; /* Light grey border */
+  border-radius: 12px; /* Rounded edges */
+  background-color: #fff; /* White background to match the registration form */
+  font-size: 16px; /* Match font size with the registration form */
+  font-weight: 500; /* Same font weight as the registration form */
+  color: #333; /* Dark text color */
+  outline: none; /* Remove outline */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+  transition: border-color 0.2s ease; /* Smooth transition for border color */
+}
+
+.todoform-input:focus {
+  border-color: #5468ff; /* Change border color on focus */
+}
+
+.todoform-btn {
+  display: flex;
+  align-items: center; /* Vertically center content */
+  justify-content: center; /* Horizontally center content */
+  background: linear-gradient(
+    135deg,
+    #6a64f1,
+    #5468ff,
+    #35c4ff
+  ); /* Cool gradient */
+  border: none;
+  border-radius: 50px; /* More rounded button */
+  color: white;
+  cursor: pointer;
+  padding: 10px 15px; /* Adjust padding for consistency */
+  font-size: 20px; /* Slightly larger text for button */
+  transition: all 0.3s ease; /* Smooth transition for hover effects */
+}
+
+.todoform-btn:hover {
+  background: linear-gradient(
+    135deg,
+    #5468ff,
+    #35c4ff
+  ); /* Slightly different gradient on hover */
+  transform: translateY(-3px); /* Button pops up a bit */
+}
+
+.todoform-btn:active {
+  transform: translateY(2px); /* Button moves down slightly on click */
+}
+
+/* Error message styling, if needed */
+.error-message {
+  color: #a20000; /* Deep red color */
+  font-size: 0.875rem; /* Smaller text size */
+  font-style: italic; /* Italicize text */
+  margin: 5px 0 0; /* Add top margin for spacing above, no bottom margin */
+  padding: 0; /* Remove any padding */
+  line-height: 1.2; /* Keep line height for better readability */
+  text-align: center; /* Center align the error message */
+}
+
+/* Media queries for responsive adjustments */
+@media (max-width: 768px) {
+  .todoform-input-flex {
+    flex-direction: column; /* Stack input and button on small screens */
+    gap: 10px; /* Space between stacked elements */
+  }
+}

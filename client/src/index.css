@@ -34,23 +34,23 @@ code {
 .App-form input {
   width: 50%;
   height: 2rem;
-  font-size: 20px;
   margin-left: 2rem;
   background-color: transparent;
   border: none;
   border-bottom: 1px solid #dde3ec;
-  font-size: 16px;
+  font-size: 16px; /* Font size for the input */
+  font-weight: 500; /* Set font weight to 500 */
   outline: none;
-  resize: none;
-  color: rgb(25, 28, 31);
+  color: rgb(25, 28, 31); /* Text color */
 }
 
 .App-form input::placeholder {
-  color: rgb(25, 28, 31);
+  color: rgb(25, 28, 31); /* Placeholder text color */
+  font-weight: 400; /* Normal font weight for placeholder */
 }
 
 .App-form input:focus {
-  border-color: #6a64f1;
+  border-color: #6a64f1; /* Border color on focus */
 }
 
 .App-form button {

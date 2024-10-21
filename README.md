@@ -18,7 +18,7 @@ Try it here: https://to-do-app-6714.onrender.com/register (to be updated)
 
 ![Image showing login flow](./images/updflow2.png)
 
-![Improved UI on failure](./images/ui-failureimprovement.mov)
+![Improved UI on failure](./images/ui-failureimprovement.mov) (fix)
 
 ![Image showing to-do app](./images/flow3.png) (to be updated)
 
