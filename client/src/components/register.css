@@ -120,6 +120,11 @@
   margin-top: 20px; /* Add space between form and button */
 }
 
+.btn:focus {
+  outline: none;
+  box-shadow: none;
+}
+
 .btn:hover {
   background: linear-gradient(
     135deg,
@@ -140,6 +145,38 @@
   transform: translateY(2px); /* Button moves down slightly on click */
 }
 
+/* Error state button */
+.btn-error {
+  background: linear-gradient(
+    135deg,
+    #ff6a6a,
+    #ff4c4c,
+    #ff0000
+  ); /* Red gradient */
+  box-shadow: 0 8px 15px rgba(255, 0, 0, 0.3); /* Red shadow */
+}
+
+.btn-error:hover {
+  background: linear-gradient(
+    135deg,
+    #ff4c4c,
+    #ff0000
+  ); /* Darker red on hover */
+  box-shadow: 0 12px 20px rgba(255, 0, 0, 0.4); /* Stronger red shadow on hover */
+  transform: translateY(-3px);
+}
+
+.btn-error:active {
+  background: linear-gradient(
+    135deg,
+    #ff6a6a,
+    #ff4c4c
+  ); /* Return to original red on click */
+  box-shadow: 0 4px 10px rgba(255, 0, 0, 0.2);
+  transform: translateY(2px);
+}
+
+/* Error message styling */
 .error-message {
   color: #a20000; /* Deep red color */
   font-size: 0.875rem; /* Smaller text size */

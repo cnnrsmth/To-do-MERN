@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom"; // Import Link from react-router-dom
+import { Link } from "react-router-dom";
 import "./register.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
@@ -11,17 +11,20 @@ const Register = () => {
     password_confirmation: "",
   });
   const [errorMessage, setErrorMessage] = useState(""); // State for error messages
+  const [hasError, setHasError] = useState(false); // State for tracking errors
 
   const handleAddUser = async (e) => {
     e.preventDefault();
 
-    // Reset error message before each submission
+    // Reset error message and error state before each submission
     setErrorMessage("");
+    setHasError(false);
 
     // Check if passwords match
     if (newUser.password !== newUser.password_confirmation) {
       setErrorMessage("Passwords do not match.");
-      return; // Exit early if passwords do not match
+      setHasError(true); // Set error state if passwords do not match
+      return;
     }
 
     try {
@@ -36,13 +39,15 @@ const Register = () => {
       if (!response.ok) {
         const errorData = await response.json();
         setErrorMessage(errorData.error); // Set the error message from the response
-        return; // Exit early if there's an error
+        setHasError(true); // Set error state if there's an error from the API
+        return;
       }
 
       window.location = "/login"; // Redirect on successful registration
     } catch (error) {
       console.error(error);
-      setErrorMessage("An error occurred while registering. Please try again."); // General error message
+      setErrorMessage("An error occurred while registering. Please try again.");
+      setHasError(true); // Set error state for general errors
     }
   };
 
@@ -97,7 +102,10 @@ const Register = () => {
                   className="formbold-form-input"
                 />
               </div>
-              <button className="btn" type="submit">
+              <button
+                className={`btn ${hasError ? "btn-error" : ""}`} // Apply btn-error class if hasError is true
+                type="submit"
+              >
                 <FontAwesomeIcon icon={faArrowRight} />
               </button>
             </div>
@@ -106,12 +114,11 @@ const Register = () => {
       </div>
       <div className="account-link">
         <p>
-          Already have an account? <Link to="/login">Log in</Link>{" "}
-          {/* Use Link for navigation */}
+          Already have an account? <Link to="/login">Log in</Link>
         </p>
       </div>
       {errorMessage && <p className="error-message">{errorMessage}</p>}{" "}
-      {/* Display error message snugly under input */}
+      {/* Error message display */}
     </div>
   );
 };

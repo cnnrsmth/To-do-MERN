@@ -1,6 +1,5 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom"; // Import Link from react-router-dom
-import "./register.css"; // Make sure to have styles for login in this file or create a separate login.css
+import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
 
@@ -9,6 +8,8 @@ const Login = () => {
     email: "",
     password: "",
   });
+  const [hasError, setHasError] = useState(false); // Track errors
+  const [errorMessage, setErrorMessage] = useState(""); // Store the error message
 
   const handleConfirmUser = async (e) => {
     e.preventDefault();
@@ -20,15 +21,22 @@ const Login = () => {
         },
         body: JSON.stringify(confirmUser),
       });
-      if (!response.ok) {
-        throw new Error(`HTTP error! status: ${response.status}`);
-      }
+
       const data = await response.json();
-      // Sets token response from API to local storage, to persist for the user's session
+
+      if (!response.ok) {
+        throw new Error(data.message || "Login failed.");
+      }
+
+      // Clear error state if login is successful
+      setHasError(false);
+      setErrorMessage(""); // Clear error message on success
       localStorage.setItem("token", data.accessToken);
-      window.location = "/app";
+      window.location = "/app"; // Redirect to app after successful login
     } catch (error) {
-      console.error(error);
+      setHasError(true); // Set error state if login fails
+      setErrorMessage(error.message); // Set the error message to display
+      console.error(error.message);
     }
   };
 
@@ -71,7 +79,10 @@ const Login = () => {
                   className="formbold-form-input"
                 />
               </div>
-              <button className="btn" type="submit">
+              <button
+                className={`btn ${hasError ? "btn-error" : ""}`} // Conditionally add the btn-error class
+                type="submit"
+              >
                 <FontAwesomeIcon icon={faArrowRight} />
               </button>
             </div>
@@ -80,10 +91,16 @@ const Login = () => {
       </div>
       <div className="account-link">
         <p>
-          Don't have an account? <Link to="/register">Create one</Link>{" "}
-          {/* Use Link for navigation */}
+          Don't have an account? <Link to="/register">Create one</Link>
         </p>
       </div>
+
+      {/* Show error message below the "Don't have an account" */}
+      {hasError && (
+        <div className="error-message">
+          {errorMessage || "An error occurred. Please try again."}
+        </div>
+      )}
     </div>
   );
 };
