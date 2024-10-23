@@ -4,29 +4,11 @@ Try it here: https://to-do-app-6714.onrender.com/register (to be updated)
 
 ## Desktop view
 
-![Image showing registration flow](./images/updflow1.png)
 
-![Image showing gmail validation](./images/gmailvalidation.png)
+https://github.com/user-attachments/assets/e85ea1e4-c8a4-43bc-b109-68b4c59f1ad1
 
-![Image showing password match validation](./images/passwordValidation1upd.png)
 
-![Image showing password min char validation](./images/passwordValidation2.png)
-
-![Image showing password one no validation](./images/passwordValidation3.png)
-
-![Image showing password special char validation](./images/passwordValidation4.png)
-
-![Image showing login flow](./images/updflow2.png)
-
-![Improved UI on failure](./images/ui-failureimprovement.mov) (fix)
-
-![Image showing to-do app](./images/flow3.png) (to be updated)
-
-This is a to-do
-
-https://github.com/user-attachments/assets/8d9c265f-78dc-428b-a04c-56c24e8d2a49
-
- application, with a simple / clean user interface. Once registered, and logged-in, users are able to access the to-do app (incl. historic to-do's if this isn't their first time), where they can add, edit, remove, and complete to-do items. The app functionality has been restricted to gmail domains (to practise middleware, nothing against non-gmail users) - therefore, use gmail when registering to get the complete app experience.
+The application features a clean, simple user interface. Once registered and logged in, users can access the to-do app, including any previous to-dos if they've logged in before. Within the app, users can add, edit, delete, and mark to-do items as complete. The app is restricted to Gmail domains (as a middleware practice, not a slight to non-Gmail users). Be sure to use a Gmail address when registering to enjoy the full experience.
 
 ## Quick start
 
@@ -37,9 +19,11 @@ Clone the repo.
 npm install
 
 // Run server
+cd into server
 npm run dev
 
 //Run client
+cd into client
 npm start
 ```
 
