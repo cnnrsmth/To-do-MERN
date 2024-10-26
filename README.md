@@ -1,6 +1,6 @@
 # Full-Stack MERN To-Do Application
 
-Try it here: https://to-do-app-6714.onrender.com/register (to be updated)
+Try it here: <LINK TBD>
 
 ## Desktop view
 
